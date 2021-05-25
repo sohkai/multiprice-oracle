@@ -1,6 +1,8 @@
 # Multiprice Oracle
 
-Exposes asset prices from a variety of on-chain sources. Primarily designed to make data collection easier for backrunning on-chain pricing models.
+> 🚨 Not intended to provide safe values for on-chain queries!
+
+Exposes asset prices from a variety of on-chain sources. Only intended to make data collection easier for backrunning on-chain pricing models.
 
 ## Organization
 
