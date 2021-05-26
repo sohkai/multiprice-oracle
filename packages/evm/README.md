@@ -2,7 +2,13 @@
 
 > 🚨 Not intended to provide safe values for for on-chain queries!
 
-## `assetToAsset()`
+## Deployments
+
+- Mainnet: [`0x1f53a354b726Dcd1FC8053182a46dE6b9995740F`](https://etherscan.io/address/0x1f53a354b726dcd1fc8053182a46de6b9995740f#readContract)
+
+## Usage
+
+### `assetToAsset()`
 
 Query one asset's price in terms of another asset.
 
