@@ -76,7 +76,7 @@ contract MultipriceOracle {
         )
     {
         // Inclusion bitmap only considers five lowest bits
-        require(uint256(_inclusionBitmap) < 2 << 5, 'Inclusion bitmap invalid');
+        require(uint256(_inclusionBitmap) < 1 << 5, 'Inclusion bitmap invalid');
 
         cl = chainLinkAssetToAsset(_tokenIn, _amountIn, _tokenOut);
         clBuf = cl.mul(WEI_UNIT.sub(_clPriceBuffer)).div(WEI_UNIT);
