@@ -1,6 +1,14 @@
-require('@nomiclabs/hardhat-ethers')
+require('@nomiclabs/hardhat-waffle')
 require('@nomiclabs/hardhat-etherscan')
 require('hardhat-local-networks-config-plugin')
+
+const hardhat = {}
+const forkingEnabled = !!process.env.FORK_NODE
+if (forkingEnabled) {
+  hardhat.forking = {
+    url: process.env.FORK_NODE,
+  }
+}
 
 module.exports = {
   solidity: {
@@ -13,7 +21,7 @@ module.exports = {
     },
   },
   networks: {
-    hardhat: {},
+    hardhat,
     mainnet: {
       url: `https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
     },
