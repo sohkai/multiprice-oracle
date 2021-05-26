@@ -7,6 +7,7 @@ import '@uniswap/v3-periphery/contracts/libraries/PoolAddress.sol';
 
 import './interfaces/IERC20.sol';
 import './interfaces/IChainlink.sol';
+import './interfaces/IUniswapV2.sol';
 import './interfaces/IUniswapV3.sol';
 
 import './libraries/Math.sol';
@@ -23,8 +24,8 @@ contract MultipriceOracle {
     address public immutable uniswapV3Factory;
     uint24 public immutable uniswapV3PoolFee;
     IUniswapV3CrossPoolOracle public immutable uniswapV3Oracle;
-    address public immutable uniswapV2Factory;
-    address public immutable sushiswapFactory;
+    IUniswapV2Factory public immutable uniswapV2Factory;
+    IUniswapV2Factory public immutable sushiswapFactory;
     address public immutable weth;
 
     mapping(address => bool) public isUsdEquivalent;
@@ -36,8 +37,8 @@ contract MultipriceOracle {
         address _uniswapV3Factory,
         uint24 _uniswapV3PoolFee,
         IUniswapV3CrossPoolOracle _uniswapV3Oracle,
-        address _uniswapV2Factory,
-        address _sushiswapFactory,
+        IUniswapV2Factory _uniswapV2Factory,
+        IUniswapV2Factory _sushiswapFactory,
         address _weth,
         address[] memory _usdEquivalents
     ) {
@@ -247,7 +248,7 @@ contract MultipriceOracle {
      * UniswapV2/Sushiswap spot quotes *
      ***********************************/
     function uniV2SpotAssetToAsset(
-        address _factory,
+        IUniswapV2Factory _factory,
         address _tokenIn,
         uint256 _amountIn,
         address _tokenOut
@@ -263,21 +264,23 @@ contract MultipriceOracle {
     }
 
     function _uniV2SpotAssetToEth(
-        address _factory,
+        IUniswapV2Factory _factory,
         address _tokenIn,
         uint256 _amountIn
     ) internal view returns (uint256 ethAmountOut) {
-        (uint256 tokenInReserve, uint256 ethReserve) = UniswapV2Library.getReserves(_factory, _tokenIn, weth);
+        address pair = _factory.getPair(_tokenIn, weth);
+        (uint256 tokenInReserve, uint256 ethReserve) = UniswapV2Library.getReserves(pair, _tokenIn, weth);
         // No slippage--just spot pricing based on current reserves
         return UniswapV2Library.quote(_amountIn, tokenInReserve, ethReserve);
     }
 
     function _uniV2SpotEthToAsset(
-        address _factory,
+        IUniswapV2Factory _factory,
         uint256 _ethAmountIn,
         address _tokenOut
     ) internal view returns (uint256 amountOut) {
-        (uint256 ethReserve, uint256 tokenOutReserve) = UniswapV2Library.getReserves(_factory, weth, _tokenOut);
+        address pair = _factory.getPair(weth, _tokenOut);
+        (uint256 ethReserve, uint256 tokenOutReserve) = UniswapV2Library.getReserves(pair, weth, _tokenOut);
         // No slippage--just spot pricing based on current reserves
         return UniswapV2Library.quote(_ethAmountIn, ethReserve, tokenOutReserve);
     }
