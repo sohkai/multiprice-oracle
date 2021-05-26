@@ -202,7 +202,7 @@ contract MultipriceOracle {
         address _tokenIn,
         uint256 _amountIn,
         address _tokenOut,
-        uint256 _twapPeriod
+        uint32 _twapPeriod
     ) public view returns (uint256 amountOut) {
         return uniswapV3Oracle.assetToAsset(_tokenIn, _amountIn, _tokenOut, _twapPeriod);
     }

@@ -7,6 +7,6 @@ interface IUniswapV3CrossPoolOracle {
         address tokenIn,
         uint256 amountIn,
         address tokenOut,
-        uint256 twapPeriod
+        uint32 twapPeriod
     ) external view returns (uint256 amountOut);
 }
