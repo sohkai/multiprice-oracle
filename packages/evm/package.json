@@ -14,6 +14,8 @@
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-etherscan": "^2.1.2",
+    "eslint": "^7.27.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "ethers": "^5.2.0",
     "hardhat": "^2.2.1",
     "hardhat-local-networks-config-plugin": "^0.0.5",
@@ -25,7 +27,7 @@
   },
   "scripts": {
     "format": "prettier --write \"contracts/**/*.sol\" \"**/*.js\" \"**/*.md\" \"**/*.yml\" \"**/*.json\"",
-    "lint": "solhint \"contracts/*.sol\" && solhint \"contracts/test-helpers/*.sol\"",
+    "lint": "solhint \"contracts/*.sol\" && eslint .",
     "compile": "hardhat compile",
     "test": "hardhat test",
     "deploy": "hardhat run scripts/deploy.js"
