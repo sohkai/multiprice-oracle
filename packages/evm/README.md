@@ -25,8 +25,8 @@ On-chain price sources include:
 - `tokenIn`: input token
 - `amountIn`: amount of input token (in input token's decimals)
 - `tokenOut`: output token
-- `clPriceBuffer`: ChainLink price buffer (in bps, no decimals) to down-adjust ChainLink price
-- `uniswapV3TwapPeriod`: TWAP period to use for UniswapV3 TWAP price
+- `clPriceBuffer`: ChainLink price buffer (in bps, where 100% is `1e18`) to down-adjust ChainLink price
+- `uniswapV3TwapPeriod`: TWAP period to use for UniswapV3 TWAP price (in seconds)
 - `inclusionBitmap`: a bitmap configuring which price sources to consider in the final result (`value`)
 
 `inclusionBitmap` maps the bits to sources like so, taking the minimum output amount amongst the selected sources:
@@ -42,6 +42,8 @@ x x x x x
 ```
 
 **Outputs:**
+
+All output values are in output token's decimals.
 
 - `value`: final output amount, based on `inclusionBitmap`
 - `cl`: output amount based on current ChainLink price
