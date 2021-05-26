@@ -118,6 +118,10 @@ describe('MultipriceOracle', function () {
         })
 
         it(`matches expected price source (${expectedOutputSource})`, () => {
+          if (expectedOutputSource === 'none') {
+            expect(outputs.value).to.equal(0)
+            return
+          }
           expect(outputs.value).to.equal(outputs[expectedOutputSource])
         })
 
@@ -333,6 +337,25 @@ describe('MultipriceOracle', function () {
             0b100000 // anything higher than 0b11111 reverts
           )
         ).to.be.revertedWith('Inclusion bitmap invalid')
+      })
+
+      context('include no sources', () => {
+        itQueriesTrade('wbtc -> usdc', {
+          input: {
+            asset: wbtc,
+            amount: 10,
+          },
+          output: {
+            asset: usdc,
+            expectedSource: 'none',
+            expectedAmount: 0,
+            buffer: 0,
+          },
+          config: {
+            ...defaultConfig,
+            inclusionBitmap: 0b00000, // none
+          },
+        })
       })
 
       context('include only chainlink', () => {

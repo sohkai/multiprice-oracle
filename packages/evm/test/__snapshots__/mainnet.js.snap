@@ -60,6 +60,18 @@ Object {
 }
 `;
 
+exports[`MultipriceOracle assetToAsset inclusion bitmap include no sources wbtc -> usdc matches query snapshot 1`] = `
+Object {
+  "cl": "402501926878",
+  "clBuf": "402501926878",
+  "sushiSpot": "400772885049",
+  "uniV2Spot": "400245765927",
+  "uniV3Spot": "401341586309",
+  "uniV3Twap": "402381295355",
+  "value": "0",
+}
+`;
+
 exports[`MultipriceOracle assetToAsset inclusion bitmap include only chainlink wbtc -> usdc matches query snapshot 1`] = `
 Object {
   "cl": "402501926878",
