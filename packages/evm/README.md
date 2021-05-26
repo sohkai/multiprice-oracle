@@ -28,11 +28,11 @@ On-chain price sources include:
 ```
 x x x x x
 | | | | |
-| | | | --- sushi spot
-| | | ----- uniswap v2 spot
+| | | | --- chainlink price (after buffer)
+| | | ----- uniswap v3 twap
 | | ------- uniswap v3 spot
-| --------- uniswap v3 twap
------------ chainlink price (after buffer)
+| --------- uniswap v2 spot
+----------- sushi spot
 ```
 
 **Outputs:**
