@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snx -> usdc matches query snapshot 1`] = `
+Object {
+  "cl": "72918452450",
+  "clBuf": "72918452450",
+  "sushiSpot": "72990359051",
+  "uniV2Spot": "72930575038",
+  "uniV3Spot": "73434657650",
+  "uniV3Twap": "73435407492",
+  "value": "72918452450",
+}
+`;

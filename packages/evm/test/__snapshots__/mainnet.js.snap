@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MultipriceOracle assetToAsset chainlink buffer large buffer to force clBuf selection usdc -> wbtc matches query snapshot 1`] = `
+Object {
+  "cl": "402501926878",
+  "clBuf": "398476907609",
+  "sushiSpot": "400772885049",
+  "uniV2Spot": "400245765927",
+  "uniV3Spot": "401341586309",
+  "uniV3Twap": "402381295355",
+  "value": "398476907609",
+}
+`;
+
+exports[`MultipriceOracle assetToAsset chainlink buffer small buffer to pass clBuf usdc -> wbtc matches query snapshot 1`] = `
+Object {
+  "cl": "402501926878",
+  "clBuf": "402461676685",
+  "sushiSpot": "400772885049",
+  "uniV2Spot": "400245765927",
+  "uniV3Spot": "401341586309",
+  "uniV3Twap": "402381295355",
+  "value": "400245765927",
+}
+`;
+
+exports[`MultipriceOracle assetToAsset eth -> usdc matches query snapshot 1`] = `
+Object {
+  "cl": "28513061543",
+  "clBuf": "28513061543",
+  "sushiSpot": "28490770326",
+  "uniV2Spot": "28473608123",
+  "uniV3Spot": "28492439951",
+  "uniV3Twap": "28566496907",
+  "value": "28473608123",
+}
+`;
+
+exports[`MultipriceOracle assetToAsset inclusion bitmap include chainlink and uniV3 twap wbtc -> usdc matches query snapshot 1`] = `
+Object {
+  "cl": "402501926878",
+  "clBuf": "402501926878",
+  "sushiSpot": "400772885049",
+  "uniV2Spot": "400245765927",
+  "uniV3Spot": "401341586309",
+  "uniV3Twap": "402381295355",
+  "value": "402381295355",
+}
+`;
+
+exports[`MultipriceOracle assetToAsset inclusion bitmap include chainlink, uniV2 spot, uniV3 twap wbtc -> usdc matches query snapshot 1`] = `
+Object {
+  "cl": "402501926878",
+  "clBuf": "402501926878",
+  "sushiSpot": "400772885049",
+  "uniV2Spot": "400245765927",
+  "uniV3Spot": "401341586309",
+  "uniV3Twap": "402381295355",
+  "value": "400245765927",
+}
+`;
+
+exports[`MultipriceOracle assetToAsset inclusion bitmap include only chainlink wbtc -> usdc matches query snapshot 1`] = `
+Object {
+  "cl": "402501926878",
+  "clBuf": "402501926878",
+  "sushiSpot": "400772885049",
+  "uniV2Spot": "400245765927",
+  "uniV3Spot": "401341586309",
+  "uniV3Twap": "402381295355",
+  "value": "402501926878",
+}
+`;
+
+exports[`MultipriceOracle assetToAsset twap window can query trades with short twap window snx -> usdc matches query snapshot 1`] = `
+Object {
+  "cl": "72918452450",
+  "clBuf": "72918452450",
+  "sushiSpot": "72990359051",
+  "uniV2Spot": "72930575038",
+  "uniV3Spot": "73434657650",
+  "uniV3Twap": "73435407492",
+  "value": "72918452450",
+}
+`;
+
+exports[`MultipriceOracle assetToAsset usdc -> eth matches query snapshot 1`] = `
+Object {
+  "cl": "3494000000000000000",
+  "clBuf": "3494000000000000000",
+  "sushiSpot": "3509908607412530083",
+  "uniV2Spot": "3512024172220602302",
+  "uniV3Spot": "3509702930724297127",
+  "uniV3Twap": "3500604233103523108",
+  "value": "3494000000000000000",
+}
+`;
+
+exports[`MultipriceOracle assetToAsset usdc -> wbtc matches query snapshot 1`] = `
+Object {
+  "cl": "247513400",
+  "clBuf": "247513400",
+  "sushiSpot": "249517878",
+  "uniV2Spot": "249846490",
+  "uniV3Spot": "249164311",
+  "uniV3Twap": "248520498",
+  "value": "247513400",
+}
+`;
+
+exports[`MultipriceOracle assetToAsset wbtc -> usdc matches query snapshot 1`] = `
+Object {
+  "cl": "402501926878",
+  "clBuf": "402501926878",
+  "sushiSpot": "400772885049",
+  "uniV2Spot": "400245765927",
+  "uniV3Spot": "401341586309",
+  "uniV3Twap": "402381295355",
+  "value": "400245765927",
+}
+`;

@@ -7,6 +7,8 @@ const forkingEnabled = !!process.env.FORK_NODE
 if (forkingEnabled) {
   hardhat.forking = {
     url: process.env.FORK_NODE,
+    // Ensures test reliability for price queries (05-26-2021)
+    blockNumber: 12510000,
   }
 }
 
