@@ -21,7 +21,7 @@
     "ethereum-waffle": "^3.3.0",
     "ethers": "^5.2.0",
     "hardhat": "^2.2.1",
-    "hardhat-local-networks-config-plugin": "^0.0.5",
+    "hardhat-local-networks-config-plugin": "^0.0.6",
     "inquirer": "^6.5.2",
     "mocha-chai-jest-snapshot": "^1.1.2",
     "prettier": "^2.3.0",
